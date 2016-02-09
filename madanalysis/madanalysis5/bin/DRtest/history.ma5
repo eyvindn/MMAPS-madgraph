@@ -1,0 +1,3 @@
+set main.currentdir = /media/sf_darkphotons/madgraph/madanalysis/madanalysis5/bin
+import ../../../DarkPhotonSignalTest/Events/run_01/unweighted_events.lhe
+plot dR(a e-) 100 0 5

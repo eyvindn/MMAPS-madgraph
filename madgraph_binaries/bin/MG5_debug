@@ -1,0 +1,96 @@
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.1.2                 2014-07-03         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set gauge unitary
+set complex_mass_scheme False
+import model DarkPhotonTest_UFO
+Traceback (most recent call last):
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 879, in onecmd
+    return self.onecmd_orig(line, **opt)
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 872, in onecmd_orig
+    return func(arg, **opt)
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/master_interface.py", line 246, in do_import
+    self.cmd.do_import(self, *args, **opts)
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/madgraph_interface.py", line 3969, in do_import
+    self.import_command_file(args[1])
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 1035, in import_command_file
+    self.exec_cmd(line, precmd=True)
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 919, in exec_cmd
+    stop = Cmd.onecmd_orig(current_interface, line, **opt)
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 872, in onecmd_orig
+    return func(arg, **opt)
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/master_interface.py", line 246, in do_import
+    self.cmd.do_import(self, *args, **opts)
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/madgraph_interface.py", line 3951, in do_import
+    self._curr_model.pass_particles_name_in_mg_default()
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/core/base_objects.py", line 1369, in pass_particles_name_in_mg_default
+    check_name_free(self, default[pdg])
+  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/core/base_objects.py", line 1358, in check_name_free
+    (part.get_name(), part.get_pdg_code(), pdg)
+MadGraph5Error: e- particles with pdg code 11 is in conflict with MG convention name for particle 11.
+ Use -modelname in order to use the particles name defined in the model and not the MadGraph5_aMC@NLO convention
+                          MadGraph5_aMC@NLO Options    
+                          ----------------    
+               stdout_level 	:	20 (user set)
+         group_subprocesses 	:	Auto
+  ignore_six_quark_processes 	:	False
+      loop_optimized_output 	:	True
+                      gauge 	:	unitary
+        complex_mass_scheme 	:	False
+
+                         MadEvent Options    
+                          ----------------    
+     automatic_html_opening 	:	True
+                    nb_core 	:	None
+                   run_mode 	:	2
+
+                      Configuration Options    
+                      ---------------------    
+                text_editor 	:	None
+      cluster_status_update 	:	(600, 30)
+               pythia8_path 	:	None (user set)
+                  hwpp_path 	:	None (user set)
+            pythia-pgs_path 	:	./pythia-pgs
+                    td_path 	:	./td
+               delphes_path 	:	./Delphes
+                thepeg_path 	:	None (user set)
+               cluster_type 	:	condor
+           cluster_nb_retry 	:	1
+                        OLP 	:	MadLoop
+                 eps_viewer 	:	None
+                    fastjet 	:	None (user set)
+                web_browser 	:	None
+          cluster_temp_path 	:	None
+               syscalc_path 	:	./SysCalc
+              cluster_queue 	:	None
+           madanalysis_path 	:	./MadAnalysis
+                     lhapdf 	:	lhapdf-config
+                 hepmc_path 	:	None (user set)
+         cluster_retry_wait 	:	300
+        output_dependencies 	:	external
+           fortran_compiler 	:	None
+                auto_update 	:	7
+        exrootanalysis_path 	:	./ExRootAnalysis
+                    timeout 	:	60
+               cpp_compiler 	:	None

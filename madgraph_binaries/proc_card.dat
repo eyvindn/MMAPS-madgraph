@@ -1,0 +1,36 @@
+#************************************************************
+#*                        MadGraph 5                        *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*    The MadGraph Development Team - Please visit us at    *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph 5                *
+#*                                                          *
+#*     run as ./bin/mg5  filename                           *
+#*                                                          *
+#************************************************************
+
+import model DarkPhotonTest_UFO
+
+
+# Specify process(es) to run
+generate e+ e- > a dp
+
+# Output processes to MadEvent directory
+output ../../DarkPhotonSignalTest
+
+# This will create a directory PROC_$MODELNAME_$X
+# If you want to specify the path/name of the directory use
+# output PATH
+
+# To generate events, you can go to the created directory and 
+# run ./bin/generate_events

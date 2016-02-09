@@ -1,0 +1,63 @@
+8
+exit
+import ../../../madgraph/e+e-2yy/Events/run_11/unweighted_events.lhe.gz
+import ../../../madgraph/e+e-2yy/Events/run_11/unweighted_events.lhe
+plot MET
+plot PT(a) 20 0 100
+generate pdflatex test.pdf
+generate_pdflatex test.pdf
+submit test
+plot PT(a) 50 0 1
+submit test2
+plot PT(a) 50 0 0.1
+submit test2
+y
+plot PT(a) 100 0 0.05
+submit test2
+y
+import ../../../madgraph/e+e-2yy/Events/run_11/unweighted_events.lhe
+exit
+import ../../../madgraph/e+e-2yyy/Events/run_09/unweighted_events.lhe
+plot PT(a) 100 0 0.05
+submit e+e-2yyy
+exit
+import ../../../madgraph/e+e-2e+e-y/Events/run_02/unweighted_events.lhe
+plot a.pt 100 0 0.05
+a
+plot a
+plot dr(a, e) 100 0 0.005
+plot DR(a, e) 100 0 0.005
+plot DR(a) 100 0 0.005
+plot dR(a, e-) 100 0 0.005
+plot dR(a e-) 100 0 0.005
+submit e+e-2e+e-yDR
+plot dR(a e-) 100 0 5
+exit
+import ../../../madgraph/DarkPhotonSignalTest
+plot dR(a e-) 100 0 5 
+submit e+e-2e+e-yDR2
+exit
+import ../..//DarkPhotonSignalTest/Events/run_01/unweighted_events.lhe
+import ../../../DarkPhotonSignalTest/Events/run_01/unweighted_events.lhe
+plot dR(a e-) 100 0 5
+submit DRtest
+plot dR(dP) 100 0 5
+plot dR(dp) 100 0 5
+import
+help
+display_multiparticles
+define
+plot dR(a) 100 0 5
+plot PT(a) 100 0 0.05
+submit DRtest2
+q
+quit
+import ../../../DarkPhotonSignalTest/Events/run_01/unweighted_events.lhe
+plot dR(a e+) 100 0 5
+submit DPtest2
+plot dR(a dP) 100 0 5
+define 
+define dP = 9000001
+plot dR(a dP) 100 0 5
+submit DPTest3
+quit
