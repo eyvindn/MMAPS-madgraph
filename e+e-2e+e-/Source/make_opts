@@ -1,21 +1,32 @@
 # Environment variables
 
 ifeq ($(origin FFLAGS),undefined)
-  FFLAGS= -O -w -fbounds-check
+  FFLAGS= -O -w -fbounds-check -fPIC
   #FFLAGS+= -g -fbounds-check -ffpe-trap=invalid,zero,overflow,underflow,denormal -Wall
 endif
 FFLAGS+= -ffixed-line-length-132
 
 # Set FC unless it's defined by an environment variable
 ifeq ($(origin FC),default)
-  FC=gfortran
+   FC=gfortran
 endif
+ifeq ($(origin F2PY), undefined)
+   F2PY=f2py
+endif
+
+
 
 # Options: dynamic, lhapdf
 
 UNAME := $(shell uname)
 
 # Option dynamic
+
+ifeq ($(UNAME), Darwin)
+  dylibext=dylib
+else
+  dylibext=so  
+endif
 
 ifdef dynamic
   ifeq ($(UNAME), Darwin)

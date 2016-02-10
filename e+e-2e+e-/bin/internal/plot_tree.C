@@ -1,7 +1,11 @@
 #include <string>
 
-bool plot_tree(char* quantity,char* plotdim="(100,0.,3.)",bool log=true)
+bool plot_tree(const char* quantity, const char* plotdim = 0, bool log = true)
 {
+  const char* plotdim_default = "(100,0.,3.)";
+  if(plotdim == 0){
+    plotdim = plotdim_default;
+  }
   char tmp1[250];
   char tmp2[300];
   char tmp3[100];
@@ -32,11 +36,11 @@ bool plot_tree(char* quantity,char* plotdim="(100,0.,3.)",bool log=true)
   Float_t Xsecfact;
   leaf_Xsec->SetAddress(&Xsecfact);
   xsecs->GetEntry(0);
-
-  for(int i=0;i<maxjets && events->GetEntries()>0;i++){
+  if (events->GetEntries()>0) {
+  for(int i=0;i<maxjets;i++){
     events->SetLineWidth(2);
-    events->SetLineColor(color[i]);
-    events->SetLineStyle(style[i]);
+    events->SetLineColor(i+2);
+    events->SetLineStyle(i+2);
     
     if(log) 
       sprintf(tmp1,"log10(%s)>>%s%i%s",quantity,quantity,i,plotdim);
@@ -54,7 +58,7 @@ bool plot_tree(char* quantity,char* plotdim="(100,0.,3.)",bool log=true)
       return false;
     }
   }
-
+  }
 
   TH1F *hsum = (TH1F*)hists[0]->Clone();
   sprintf(tmp3,"%ssum",quantity);

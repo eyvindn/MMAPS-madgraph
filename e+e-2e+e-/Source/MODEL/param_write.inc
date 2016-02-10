@@ -10,21 +10,16 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       WRITE(*,*) 'aS = ', AS
       WRITE(*,*) 'mdl_ymb = ', MDL_YMB
       WRITE(*,*) 'mdl_ymt = ', MDL_YMT
-      WRITE(*,*) 'mdl_yme = ', MDL_YME
-      WRITE(*,*) 'mdl_ymm = ', MDL_YMM
       WRITE(*,*) 'mdl_ymtau = ', MDL_YMTAU
       WRITE(*,*) 'mdl_MZ = ', MDL_MZ
       WRITE(*,*) 'mdl_MT = ', MDL_MT
       WRITE(*,*) 'mdl_MB = ', MDL_MB
       WRITE(*,*) 'mdl_MH = ', MDL_MH
-      WRITE(*,*) 'mdl_Me = ', MDL_ME
-      WRITE(*,*) 'mdl_MM = ', MDL_MM
       WRITE(*,*) 'mdl_MTA = ', MDL_MTA
       WRITE(*,*) 'mdl_WZ = ', MDL_WZ
       WRITE(*,*) 'mdl_WW = ', MDL_WW
       WRITE(*,*) 'mdl_WT = ', MDL_WT
       WRITE(*,*) 'mdl_WH = ', MDL_WH
-      WRITE(*,*) 'mdl_WTau = ', MDL_WTAU
       WRITE(*,*)  ' Internal Params'
       WRITE(*,*)  ' ---------------------------------'
       WRITE(*,*)  ' '
@@ -51,8 +46,6 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       WRITE(*,*) 'mdl_vev__exp__2 = ', MDL_VEV__EXP__2
       WRITE(*,*) 'mdl_lam = ', MDL_LAM
       WRITE(*,*) 'mdl_yb = ', MDL_YB
-      WRITE(*,*) 'mdl_ye = ', MDL_YE
-      WRITE(*,*) 'mdl_ym = ', MDL_YM
       WRITE(*,*) 'mdl_yt = ', MDL_YT
       WRITE(*,*) 'mdl_ytau = ', MDL_YTAU
       WRITE(*,*) 'mdl_muH = ', MDL_MUH

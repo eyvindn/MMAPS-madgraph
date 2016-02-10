@@ -127,7 +127,11 @@ c-----
 c      pm=dsqrt(p(1)**2+p(2)**2+p(3)**2)
       
       pm = p(0)
-      rap = .5d0*dlog((pm+p(3))/(pm-p(3)))+cm_rap
+      if (pm.gt.p(3)) then
+        rap = .5d0*dlog((pm+p(3))/(pm-p(3)))+cm_rap
+      else
+        rap = -1d99
+      endif
       end
       DOUBLE PRECISION  FUNCTION rap2(p)
 c************************************************************************
@@ -414,7 +418,7 @@ c      pm1=max(p1(0)**2-p1(1)**2-p1(2)**2-p1(3)**2,0d0)
       if ((lpp(1).eq.0).and.(lpp(2).eq.0)) then
 c        write(*,*) 'kin_functions.f: Error. No jet measure w.r.t. beam.'
 c        djb = 0d0
-         djb=max(p1(0),0d0)
+         djb=max(p1(0),0d0)**2
       else
         djb = (p1(0)-p1(3))*(p1(0)+p1(3)) ! p1(1)**2+p1(2)**2+pm1
 c        djb = p1(1)**2+p1(2)**2+p1(4)

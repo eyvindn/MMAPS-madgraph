@@ -43,15 +43,28 @@ c
       logical exists
       integer i
 
+
 c     first try in the current directory
-      LHAPath='PDFsets'
+      LHAPath='./PDFsets'
       Inquire(File=LHAPath, exist=exists)
       if(exists)return
-c     then try one directory up
-      LHAPath=up//LHAPath
-      Inquire(File=LHAPath, exist=exists)
-      if(exists)return
-c     finally try in the lib directory
+      
+         LHAPath='/cvmfs/cp3.uclouvain.be/madgraph//PDFsets'
+         Inquire(File=LHAPath, exist=exists)
+         if(exists)return        
+         LHAPath='/cvmfs/cp3.uclouvain.be/madgraph//../lhapdf/pdfsets/6.1/'
+         Inquire(File=LHAPath, exist=exists)
+         if(exists)return
+         LHAPath='/cvmfs/cp3.uclouvain.be/madgraph//../lhapdf/pdfsets/'
+         Inquire(File=LHAPath, exist=exists)
+         if(exists)return  
+         LHAPath='./PDFsets'            
+         
+      do i=1,6
+         LHAPath=up//LHAPath
+         Inquire(File=LHAPath, exist=exists)
+         if(exists)return
+      enddo
       LHAPath='lib/PDFsets'
       Inquire(File=LHAPath, exist=exists)
       if(exists)return
@@ -61,7 +74,7 @@ c     finally try in the lib directory
          if(exists)return
       enddo
       print*,'Could not find PDFsets directory, quitting'
-      stop 1
+      stop
       
       return
       end

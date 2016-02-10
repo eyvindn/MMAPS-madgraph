@@ -5,4 +5,9 @@ ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       DOUBLE COMPLEX COND
       DOUBLE COMPLEX CONDIF
       DOUBLE COMPLEX REGLOG
+      DOUBLE COMPLEX REGLOGP
+      DOUBLE COMPLEX REGLOGM
+      DOUBLE COMPLEX RECMS
       DOUBLE COMPLEX ARG
+
+
