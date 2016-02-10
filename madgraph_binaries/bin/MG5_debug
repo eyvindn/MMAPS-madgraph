@@ -24,32 +24,36 @@ set group_subprocesses Auto
 set ignore_six_quark_processes False
 set gauge unitary
 set complex_mass_scheme False
-import model DarkPhotonTest_UFO
+import model sm
+help
+generate e+ e- > e+ e-
+output
 Traceback (most recent call last):
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 879, in onecmd
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 879, in onecmd
     return self.onecmd_orig(line, **opt)
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 872, in onecmd_orig
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 872, in onecmd_orig
     return func(arg, **opt)
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/master_interface.py", line 246, in do_import
-    self.cmd.do_import(self, *args, **opts)
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/madgraph_interface.py", line 3969, in do_import
-    self.import_command_file(args[1])
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 1035, in import_command_file
-    self.exec_cmd(line, precmd=True)
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 919, in exec_cmd
-    stop = Cmd.onecmd_orig(current_interface, line, **opt)
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/extended_cmd.py", line 872, in onecmd_orig
-    return func(arg, **opt)
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/master_interface.py", line 246, in do_import
-    self.cmd.do_import(self, *args, **opts)
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/interface/madgraph_interface.py", line 3951, in do_import
-    self._curr_model.pass_particles_name_in_mg_default()
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/core/base_objects.py", line 1369, in pass_particles_name_in_mg_default
-    check_name_free(self, default[pdg])
-  File "/media/sf_darkphotons/madgraph/madgraph_binaries/madgraph/core/base_objects.py", line 1358, in check_name_free
-    (part.get_name(), part.get_pdg_code(), pdg)
-MadGraph5Error: e- particles with pdg code 11 is in conflict with MG convention name for particle 11.
- Use -modelname in order to use the particles name defined in the model and not the MadGraph5_aMC@NLO convention
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/interface/master_interface.py", line 264, in do_output
+    self.cmd.do_output(self, line, *args, **opts)
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/interface/madgraph_interface.py", line 5506, in do_output
+    self.finalize(nojpeg)
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/interface/madgraph_interface.py", line 5776, in finalize
+    wanted_couplings)
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/iolibs/export_v4.py", line 2568, in convert_model_to_mg4
+    wanted_lorentz, wanted_couplings)
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/iolibs/export_v4.py", line 590, in convert_model_to_mg4
+    model_builder.build(wanted_couplings)
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/iolibs/export_v4.py", line 4308, in build
+    self.write_all()
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/iolibs/export_v4.py", line 4357, in write_all
+    self.create_param_card()
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/madgraph/iolibs/export_v4.py", line 5067, in create_param_card
+    param_writer.ParamCardWriter(self.model, out_path)
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/models/write_param_card.py", line 59, in __init__
+    self.define_not_dep_param()
+  File "/nfs/cms/mc1/een7/MMAPS-madgraph/madgraph_binaries/models/write_param_card.py", line 93, in define_not_dep_param
+    mass = self.param_dict[p["mass"]]
+KeyError: '1.0'
                           MadGraph5_aMC@NLO Options    
                           ----------------    
                stdout_level 	:	20 (user set)
